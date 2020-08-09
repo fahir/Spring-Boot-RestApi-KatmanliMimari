@@ -1,8 +1,9 @@
 package com.springproject.demo.Entities;
-
+import com.querydsl.core.annotations.QueryEntity;
 import javax.persistence.*;
 
 @Entity
+@QueryEntity
 @Table(name = "country")
 public class Country {
   @Id

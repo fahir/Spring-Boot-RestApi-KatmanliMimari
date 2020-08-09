@@ -1,11 +1,15 @@
 package com.springproject.demo.Entities;
+import com.querydsl.core.annotations.QueryEntity;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
+@QueryEntity
 @Table(name="city")
-public class City {
+public class City implements Serializable {
   @Id
-  @Column(name = "ID")
+  @Column(name = "Id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int id;
   @Column(name = "name")
@@ -16,6 +20,18 @@ public class City {
   private String district;
   @Column(name = "population")
   private int population;
+
+  public String getAd() {
+    return ad;
+  }
+
+  public void setAd(String ad) {
+    this.ad = ad;
+  }
+
+  @Column(name = "ad")
+  private String ad;
+
 
   public City() {
   }
@@ -62,12 +78,13 @@ public class City {
 
 
 
-  public City(int id, String name, String countryCode, String district, int population) {
+  public City(int id, String name, String countryCode, String district, int population, String ad) {
     this.id = id;
     this.name = name;
     this.countryCode = countryCode;
     this.district = district;
     this.population = population;
+    this.ad = ad;
   }
 
 }
