@@ -13,18 +13,14 @@ import java.io.FileNotFoundException;
 @SpringBootApplication
 public class DemoApplication {
 	private final AdresReportService adresReportService;
-@Autowired
+
+	@Autowired
 	public DemoApplication(AdresReportService adresReportService) {
 		this.adresReportService = adresReportService;
 	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
+		//***
 	}
-
-
 }
-
-
-
-
